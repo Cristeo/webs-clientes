@@ -1,0 +1,103 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pettilucci · Torre del Mar (web de ejemplo)</title><meta name="description" content="4,9★ en Google y más de 130 reseñas. Pelo, uñas y tratamientos de estética, con cita por WhatsApp."><meta name="robots" content="noindex">
+<style>
+@font-face{font-family:Lora;src:url(../fonts/Lora-Variable.ttf);font-weight:400 700;font-display:swap}@font-face{font-family:Inter;src:url(../fonts/Inter-Regular.otf);font-weight:400;font-display:swap}@font-face{font-family:Inter;src:url(../fonts/Inter-Bold.otf);font-weight:600 800;font-display:swap}
+:root{--f:#fbf3f1;--o:#8c3b4e;--a:#e7a9a0;--c:#f5dcd8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.55 Inter,system-ui,sans-serif;color:#1d1d1f;background:var(--f);overflow-x:hidden}
+a{color:inherit}img{max-width:100%;display:block}h1,h2{font-family:Lora,Georgia,serif;line-height:1.1;margin:0}
+.demo{background:#111;color:#fff;font-size:13px;text-align:center;padding:8px 12px}.demo a{color:var(--a)}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--o) 92%,transparent);backdrop-filter:blur(8px);color:#fff}
+.bar{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;gap:12px}
+.logo{font-family:Lora;font-weight:700;font-size:20px;text-decoration:none;display:flex;gap:10px;align-items:center}.logo i{font-style:normal;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--a);display:grid;place-items:center}
+nav{display:flex;gap:18px;align-items:center}nav a{text-decoration:none;font-size:15px;opacity:.85}nav a:hover{opacity:1}
+.lang{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:20px;padding:5px 12px;font:600 13px Inter;cursor:pointer}
+@media(max-width:760px){nav a{display:none}}
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;background:#000}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero .in{position:relative;max-width:1120px;margin:auto;width:100%;padding:0 16px 64px}
+.pill{display:inline-block;border:1px solid var(--a);color:var(--a);border-radius:30px;padding:5px 14px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{font-size:clamp(40px,7vw,76px);margin:16px 0 12px}.hero h1 em{color:var(--a)}.hero p{max-width:560px;font-size:18px;opacity:.9;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:8px;border-radius:14px;padding:14px 24px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:16px}
+.b1{background:#25d366;color:#05351a}.b2{border:1.5px solid #fff;color:#fff;background:transparent}
+.datos{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;font-size:14px;opacity:.9}.datos b{display:block;font-size:20px;color:var(--a)}
+section{padding:80px 16px}.w{max-width:1120px;margin:auto}.eye{font-size:13px;letter-spacing:.2em;font-weight:700;color:var(--o);text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(32px,4.5vw,46px);margin-bottom:28px;color:var(--o)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.tab{border:0;border-radius:30px;padding:9px 18px;background:var(--c);color:var(--o);font:600 15px Inter;cursor:pointer}.tab.on{background:var(--o);color:#fff}
+.lista{display:none;list-style:none;padding:0;margin:0;max-width:760px}.lista.on{display:block}
+.lista li{display:flex;justify-content:space-between;gap:16px;background:#fff;border-radius:16px;padding:16px 20px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.lista b{display:block}.lista small{color:#666}.lista span{font-weight:700;color:var(--o);white-space:nowrap}
+.cita{background:var(--o);color:#fff}.cita h2,.cita .eye{color:#fff}.cita .eye{color:var(--a)}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:880px}
+label{font-size:14px;opacity:.85}select,input{width:100%;margin-top:6px;padding:13px 14px;border-radius:12px;border:0;font:16px Inter;background:#fff;color:#111}
+.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.galeria img{aspect-ratio:4/3;object-fit:cover;border-radius:16px;width:100%}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}.caja{background:#fff;border-radius:20px;padding:26px}
+.caja table{width:100%;border-collapse:collapse}.caja td{padding:7px 0;border-bottom:1px solid #eee}.caja td+td{text-align:right;font-weight:600}
+.mapa{display:grid;place-items:center;min-height:220px;border-radius:16px;background:var(--c);color:var(--o);font-weight:700;text-decoration:none;text-align:center;padding:16px}
+footer{background:#111;color:#bbb;font-size:14px;padding:36px 16px}footer .w{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+dialog{border:0;border-radius:22px;padding:0;max-width:380px;width:calc(100% - 32px)}dialog::backdrop{background:rgba(0,0,0,.6)}
+.wa{background:#0b141a;color:#fff;padding:22px}.wa small{color:#8696a0}.wa .m{background:#005c4b;border-radius:14px 14px 4px 14px;padding:12px 14px;margin:12px 0 0 30px;white-space:pre-line}
+.wa button{margin-top:18px;width:100%}
+.ham{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}.wbtn{background:#25d366;color:#05351a!important;opacity:1!important;font-weight:700;border-radius:20px;padding:6px 14px}
+@media(max-width:960px){.ham{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--o);padding:12px 16px 18px}nav.open{display:flex}nav a{display:block!important;padding:8px 0}}
+.gpill{display:inline-flex;gap:8px;align-items:center;background:#fff;color:#1d1d1f;border-radius:30px;padding:8px 16px;font-weight:700;margin-top:26px;text-decoration:none}
+.sobre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}.sobre img{border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.nums{display:flex;gap:30px;flex-wrap:wrap;margin-top:22px}.nums b{display:block;font-family:Lora,Georgia,serif;font-size:42px;color:var(--o);line-height:1}
+@media(max-width:760px){.sobre{grid-template-columns:minmax(0,1fr)}}
+.galeria{grid-template-columns:repeat(4,minmax(0,1fr))}.galeria img:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}
+@media(max-width:760px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ops{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:22px}.op{background:#fff;border-radius:18px;padding:22px;color:#1d1d1f}.op b{color:var(--o);font-size:20px}
+.b3{background:var(--o);color:#fff}.contacto{text-align:center}.tel{display:block;font-family:Lora,Georgia,serif;font-size:clamp(34px,6vw,54px);color:var(--o);text-decoration:none;margin:6px 0 22px}.contacto .btns{justify-content:center}
+iframe{width:100%;height:280px;border:0;border-radius:16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+
+/* Pettilucci: spa cálido, fondo rosado, formas orgánicas, tratamientos en tarjetas */
+body{font-family:Nunito,system-ui,sans-serif}h1,h2,.logo{font-family:"DM Serif Display",Georgia,serif;font-weight:400}
+.hero img{opacity:.5}
+#servicios,#galeria{background:#f5dcd8}.lista{display:none;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:none}.lista.on{display:grid}
+.lista li{margin:0;border-radius:30px 6px 30px 6px;flex-direction:column}.galeria img{border-radius:120px 120px 16px 16px;aspect-ratio:3/4}
+/* frontend-design · Orgánico y cálido. Ancla: fotos en arco y manchas suaves de color detrás de las secciones */
+#sobre .sobre img{border-radius:300px 300px 24px 24px;aspect-ratio:3/4}
+#sobre,#info{position:relative;overflow:hidden}#sobre::before,#info::before{content:'';position:absolute;width:420px;height:420px;border-radius:42% 58% 63% 37%/45% 41% 59% 55%;background:#e7a9a0;opacity:.28;right:-120px;top:-80px;z-index:-1}
+body{position:relative;z-index:0}.op{border-radius:40px 10px 40px 10px}.btn{border-radius:40px}.caja{border-radius:32px}
+@media(prefers-reduced-motion:no-preference){#sobre img{animation:flota 1s ease-out both}}@keyframes flota{from{transform:translateY(30px) scale(.97);opacity:0}}
+</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;700&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BeautySalon","name":"Pettilucci","address":{"@type":"PostalAddress","streetAddress":"Av. Dr. Marañón, 14 · Torre del Mar","addressLocality":"Torre del Mar","addressRegion":"Málaga","addressCountry":"ES"},"telephone":"+34600228290","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":130}}</script></head><body class="pettilucci">
+<div class="demo"><span data-es="Propuesta de web para Pettilucci · precios y fotos de ejemplo, a cambiar por los vuestros" data-en="Website proposal for Pettilucci · sample prices and photos">Propuesta de web para Pettilucci · precios y fotos de ejemplo, a cambiar por los vuestros</span> <a href="../index.html"><span data-es="Ver más ejemplos" data-en="More demos">Ver más ejemplos</span></a></div>
+<header><div class="bar" style="position:relative"><a class="logo" href="#"><i>🌸</i>Pettilucci</a>
+<button class="ham" id="ham" aria-label="Menú" aria-expanded="false">☰</button>
+<nav id="nav"><a href="#servicios"><span data-es="Tratamientos" data-en="Treatments">Tratamientos</span></a><a href="#galeria"><span data-es="Fotos" data-en="Photos">Fotos</span></a><a href="#opiniones"><span data-es="Opiniones" data-en="Reviews">Opiniones</span></a><a href="#info"><span data-es="Horario y ubicación" data-en="Hours &amp; location">Horario y ubicación</span></a><a class="wbtn" href="#cita"><span data-es="Reservar cita" data-en="Book now">Reservar cita</span></a><button class="lang" id="lang">EN</button></nav></div></header>
+<div class="hero"><img src="img/b032.jpg" alt="Pettilucci"><div class="in"><span class="pill">📍 Torre del Mar · Málaga</span>
+<h1><span data-es="Peluquería y estética para cuidarte" data-en="Hair and beauty to look after you">Peluquería y estética para cuidarte</span></h1><p><span data-es="4,9★ en Google y más de 130 reseñas. Pelo, uñas y tratamientos de estética, con cita por WhatsApp." data-en="4.9★ on Google. Hair, nails and beauty treatments.">4,9★ en Google y más de 130 reseñas. Pelo, uñas y tratamientos de estética, con cita por WhatsApp.</span></p>
+<div class="btns"><a class="btn b1" href="#cita"><span data-es="Reservar cita" data-en="Book now">Reservar cita</span></a><a class="btn b2" href="#servicios"><span data-es="Ver precios" data-en="See prices">Ver precios</span></a></div>
+<a class="gpill" href="#opiniones">⭐ 4,9 · <span data-es="+130 reseñas en Google" data-en="130+ Google reviews">+130 reseñas en Google</span></a></div></div>
+<section id="sobre"><div class="w sobre"><div><div class="eye"><span data-es="Sobre nosotros" data-en="About us">Sobre nosotros</span></div><h2><span data-es="Un sitio de confianza en Torre del Mar" data-en="A trusted place in Torre del Mar">Un sitio de confianza en Torre del Mar</span></h2>
+<p><span data-es="4,9★ en Google y más de 130 reseñas. Pelo, uñas y tratamientos de estética, con cita por WhatsApp." data-en="4.9★ on Google. Hair, nails and beauty treatments.">4,9★ en Google y más de 130 reseñas. Pelo, uñas y tratamientos de estética, con cita por WhatsApp.</span></p><div class="nums"><span><b>4,9★</b><span data-es="En Google" data-en="On Google">En Google</span></span><span><b>+130</b><span data-es="Reseñas" data-en="Reviews">Reseñas</span></span><span><b>💆</b><span data-es="Pelo y estética" data-en="Hair &amp; beauty">Pelo y estética</span></span></div></div><img src="img/b036.jpg" alt="" loading="lazy"></div></section>
+<section id="servicios" style="background:var(--c)"><div class="w"><div class="eye"><span data-es="Tratamientos" data-en="Treatments">Tratamientos</span></div><h2><span data-es="Precios claros, sin sorpresas" data-en="Clear prices, no surprises">Precios claros, sin sorpresas</span></h2><div class="tabs"><button class="tab on" data-tab="0"><span data-es="Peluquería" data-en="Hair">Peluquería</span></button><button class="tab" data-tab="1"><span data-es="Estética" data-en="Beauty">Estética</span></button><button class="tab" data-tab="2"><span data-es="Uñas" data-en="Nails">Uñas</span></button></div><ul class="lista on" data-lista="0"><li><div><b><span data-es="Corte y peinado" data-en="Cut &amp; style">Corte y peinado</span></b></div><span>18 €</span></li><li><div><b><span data-es="Color" data-en="Colour">Color</span></b><small><span data-es="Desde" data-en="From">Desde</span></small></div><span>35 €</span></li></ul><ul class="lista" data-lista="1"><li><div><b><span data-es="Limpieza facial" data-en="Facial">Limpieza facial</span></b><small><span data-es="60 min" data-en="60 min">60 min</span></small></div><span>40 €</span></li><li><div><b><span data-es="Depilación cejas" data-en="Eyebrow wax">Depilación cejas</span></b></div><span>8 €</span></li></ul><ul class="lista" data-lista="2"><li><div><b><span data-es="Manicura semipermanente" data-en="Gel manicure">Manicura semipermanente</span></b></div><span>20 €</span></li><li><div><b><span data-es="Pedicura" data-en="Pedicure">Pedicura</span></b></div><span>25 €</span></li></ul></div></section>
+<section id="galeria"><div class="w"><div class="eye"><span data-es="Fotos" data-en="Photos">Fotos</span></div><h2><span data-es="Nuestro centro" data-en="Our salon">Nuestro centro</span></h2><div class="galeria"><img src="img/b038.jpg" alt="" loading="lazy"><img src="img/b033.jpg" alt="" loading="lazy"><img src="img/b032.jpg" alt="" loading="lazy"><img src="img/b036.jpg" alt="" loading="lazy"></div></div></section>
+<section id="opiniones" style="background:var(--c)"><div class="w"><div class="eye"><span data-es="Opiniones" data-en="Reviews">Opiniones</span></div><h2><span data-es="Lo que destacan en Google" data-en="What people highlight on Google">Lo que destacan en Google</span></h2>
+<div class="ops"><div class="op"><b>[COMPLETAR]</b><p><span data-es="Aquí va un resumen de lo que más repiten vuestras reseñas reales (sin nombres)." data-en="A summary of your real reviews.">Aquí va un resumen de lo que más repiten vuestras reseñas reales (sin nombres).</span></p></div></div>
+<a class="btn b3" href="https://www.google.com/search?q=Pettilucci%20Torre%20del%20Mar" target="_blank" rel="noopener"><span data-es="Ver todas las reseñas en Google" data-en="See all Google reviews">Ver todas las reseñas en Google</span></a></div></section>
+<section id="info"><div class="w info"><div class="caja"><div class="eye"><span data-es="Horario" data-en="Opening hours">Horario</span></div><table><tr><td><span data-es="Lunes a viernes" data-en="Monday to Friday">Lunes a viernes</span></td><td>Consultar</td></tr><tr><td><span data-es="Sábado" data-en="Saturday">Sábado</span></td><td>Consultar</td></tr></table><p><b>Av. Dr. Marañón, 14 · Torre del Mar</b></p>
+<a class="btn b3" href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Dr.%20Mara%C3%B1%C3%B3n%2C%2014%2C%20Torre%20del%20Mar%2C%20M%C3%A1laga" target="_blank" rel="noopener"><span data-es="Cómo llegar" data-en="Directions">Cómo llegar</span></a></div>
+<div class="caja" id="mapa"><div class="eye"><span data-es="Dónde estamos" data-en="Find us">Dónde estamos</span></div><button class="mapa" style="width:100%;border:0;cursor:pointer;font:inherit" id="vermapa">🗺️ <span data-es="Ver el mapa" data-en="Show map">Ver el mapa</span><br><small style="font-weight:400">Av. Dr. Marañón, 14 · Torre del Mar</small></button></div></div></section>
+<section class="cita" id="cita"><div class="w"><div class="eye"><span data-es="En un minuto" data-en="In one minute">En un minuto</span></div><h2><span data-es="Reserva tu momento" data-en="Book your time">Reserva tu momento</span></h2>
+<form class="form" id="f"><label><span data-es="Tratamiento" data-en="Treatment">Tratamiento</span><select name="s" id="fs"><option>Corte y peinado</option><option>Color</option><option>Limpieza facial</option><option>Depilación cejas</option><option>Manicura semipermanente</option><option>Pedicura</option></select></label><label><span data-es="Día" data-en="Day">Día</span><input type="date" name="d" id="fd" required></label>
+<label><span data-es="Hora" data-en="Time">Hora</span><select name="h" id="fh"><option>10:00</option><option>11:00</option><option>12:00</option><option>17:00</option><option>18:00</option><option>19:00</option></select></label><label><span data-es="Nombre" data-en="Name">Nombre</span><input name="n" id="fn" required autocomplete="given-name"></label>
+<div style="align-self:end"><button class="btn b1" style="width:100%"><span data-es="Reservar cita" data-en="Book now">Reservar cita</span></button></div></form></div></section>
+<section class="contacto" id="contacto"><div class="w"><div class="eye"><span data-es="Contacto" data-en="Contact">Contacto</span></div><a class="tel" href="tel:+34600228290">600 22 82 90</a>
+<div class="btns"><a class="btn b1" href="https://wa.me/34600228290" target="_blank" rel="noopener">WhatsApp</a><a class="btn b3" href="tel:+34600228290"><span data-es="Llamar" data-en="Call">Llamar</span></a></div></div></section>
+<footer><div class="w"><span>© 2026 Pettilucci</span><span><a href="#"><span data-es="Aviso legal" data-en="Legal notice">Aviso legal</span></a> · <a href="#"><span data-es="Privacidad" data-en="Privacy">Privacidad</span></a> · <a href="#">Cookies</a></span><span><span data-es="Fotos de ejemplo: Wikimedia Commons" data-en="Sample photos: Wikimedia Commons">Fotos de ejemplo: Wikimedia Commons</span></span></div></footer>
+<a class="fab" href="#cita" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
+<dialog id="dlg"><div class="wa"><small><span data-es="Así le llega al negocio por WhatsApp:" data-en="This is what the business receives on WhatsApp:">Así le llega al negocio por WhatsApp:</span></small><div class="m" id="msg"></div>
+<small style="display:block;margin-top:14px"><span data-es="En la web publicada, este botón abre WhatsApp con el mensaje ya escrito." data-en="On the live website, this opens WhatsApp with the message ready.">En la web publicada, este botón abre WhatsApp con el mensaje ya escrito.</span></small><button class="btn b1" onclick="dlg.close()">OK</button></div></dialog>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab,.lista').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelector('[data-lista="'+b.dataset.tab+'"]').classList.add('on')});
+ham.onclick=function(){var o=nav.classList.toggle('open');ham.setAttribute('aria-expanded',o)};nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+vermapa.onclick=function(){mapa.insertAdjacentHTML('beforeend','<iframe title="Mapa" loading="lazy" src="https://www.google.com/maps?q='+encodeURIComponent("Av. Dr. Marañón, 14, Torre del Mar, Málaga")+'&output=embed"></iframe>');vermapa.remove()};
+fd.min=new Date().toISOString().slice(0,10);
+f.onsubmit=function(ev){ev.preventDefault();var x=new FormData(f),dia=new Date(x.get('d')).toLocaleDateString(document.documentElement.lang,{weekday:'long',day:'numeric',month:'long'});
+msg.textContent="Hola 🌸 Quería reservar:\n💆 {s}\n📅 {d}, {h}\n🙋 {n}".replace('{s}',x.get('s')).replace('{d}',dia).replace('{h}',x.get('h')).replace('{n}',x.get('n'));dlg.showModal()};
+lang.onclick=function(){var en=document.documentElement.lang==='es';document.documentElement.lang=en?'en':'es';lang.textContent=en?'ES':'EN';document.querySelectorAll('[data-en]').forEach(s=>s.textContent=s.dataset[en?'en':'es'])};
+</script></body></html>
