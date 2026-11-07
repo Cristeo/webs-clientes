@@ -2,14 +2,14 @@
 
 Propuestas de web para negocios de Torre del Mar (fotos y precios de ejemplo). Web estática servida con GitHub Pages.
 
-## Plantillas por tipo de cliente (`muestras/`)
+## Webs de ejemplo por sector
 
-| Tipo de cliente | Web |
+| Sector | Web |
 |---|---|
-| Restaurante, bar, cafetería | `muestras/restaurante/` |
-| Asesoría, abogado, gestoría | `muestras/asesoria/` |
-| Gimnasio, box, academia | `muestras/gimnasio/` |
-| Reformas, obras, oficios | `muestras/reformas/` |
-| Clínica, fisio, dentista | `muestras/clinica/` |
+| Hostelería | `chiringuito/` |
+| Salud | `fisio/` |
+| Alojamiento | `apartamentos/` |
+| Turismo | `excursiones/` |
+| Comercio | `delicatessen/` |
 
-Negocios, precios y datos inventados. La portada (`index.html`) tiene una guía de cuál enseñar a cada cliente.
+Hechas con la plantilla `generar_ejemplos.js` + `ejemplos.json`. Negocios inventados; fotos de Wikimedia Commons (créditos en `CREDITOS.txt` del banco de fotos). La portada tiene la guía de qué web enseñar a cada cliente.
