@@ -1,0 +1,76 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>La Marea · Restaurante (web de ejemplo)</title>
+<meta name="description" content="Pescado del día y arroces frente al mar. Carta, horario y reservas.">
+<style>
+@font-face{font-family:Lora;src:url(../../fonts/Lora-Variable.ttf);font-weight:400 700;font-display:swap}
+@font-face{font-family:Inter;src:url(../../fonts/Inter-Regular.otf);font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(../../fonts/Inter-Bold.otf);font-weight:600 800;font-display:swap}
+:root{--crema:#f7f0e4;--tinta:#2a1d14;--teja:#b5502c;--oliva:#5d6b3a;--suave:#7a6a5c;--linea:#e2d6c3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--tinta);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Lora,Georgia,serif;margin:0;line-height:1.1}
+a{color:inherit}
+.demo{background:var(--tinta);color:var(--crema);font-size:13px;text-align:center;padding:8px 12px}
+.demo a{color:#f3b48f}
+header{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:20px 16px;gap:12px}
+.logo{font-family:Lora;font-size:26px;font-weight:700;font-style:italic;text-decoration:none}
+nav{display:flex;gap:22px;align-items:center}nav a{text-decoration:none;font-size:15px}
+.btn{display:inline-block;background:var(--teja);color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:40px;border:0;font:700 15px Inter;cursor:pointer}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--oliva);outline-offset:3px}
+@media(max-width:700px){nav a:not(.btn){display:none}}
+.hero{max-width:1100px;margin:auto;padding:30px 16px 70px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(42px,7vw,78px);font-weight:600}.hero h1 em{color:var(--teja)}
+.hero p{font-size:19px;color:var(--suave);max-width:46ch}
+.plato{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#fff8ec 0 38%,var(--linea) 38.5% 41%,#fff8ec 41.5% 60%,#d9c8ae 60.5% 62%,transparent 62.5%),radial-gradient(circle at 35% 30%,#efe3cf,#e3d1b6);position:relative;box-shadow:0 30px 60px -30px #6b4b2a66}
+.plato:before{content:"";position:absolute;inset:27%;border-radius:50%;background:radial-gradient(circle at 40% 40%,#e9a23b,#c9701f 60%,#a14d17);box-shadow:inset 0 0 0 6px #f3c06b55}
+.plato:after{content:"";position:absolute;width:22%;height:6%;left:40%;top:45%;background:var(--oliva);border-radius:50%;transform:rotate(-25deg);box-shadow:-30px 25px 0 -2px #6f7d45,25px 30px 0 -3px #c33}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.plato{max-width:320px;margin:auto;width:100%}}
+.datos{background:var(--tinta);color:var(--crema)}
+.datos .in{max-width:1100px;margin:auto;padding:26px 16px;display:flex;flex-wrap:wrap;gap:18px 48px;justify-content:space-between}
+.datos b{display:block;font-family:Lora;font-size:20px}.datos span{opacity:.75;font-size:14px}
+section{max-width:1100px;margin:auto;padding:80px 16px}
+.k{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--teja)}
+h2{font-size:clamp(32px,5vw,48px);margin:8px 0 30px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tabs button{background:none;border:1.5px solid var(--tinta);border-radius:30px;padding:8px 18px;font:600 14px Inter;color:var(--tinta);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--tinta);color:var(--crema)}
+.carta{display:grid;grid-template-columns:1fr 1fr;gap:4px 60px}
+.carta[hidden]{display:none}
+.item{display:flex;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px dashed var(--linea)}
+.item h3{font-size:19px;font-weight:600}.item small{display:block;color:var(--suave);font:14px Inter}
+.item .p{margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:700px){.carta{grid-template-columns:1fr}}
+.menu{background:var(--oliva);color:#f4f1e6;border-radius:24px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.menu h2{margin:0 0 10px}.menu .pr{font-family:Lora;font-size:64px;font-weight:700;line-height:1}
+@media(max-width:700px){.menu{grid-template-columns:1fr;padding:28px}}
+form{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:#fff;border:1px solid var(--linea);border-radius:20px;padding:24px}
+label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--suave)}
+input,select{font:16px Inter;padding:11px 12px;border:1px solid var(--linea);border-radius:10px;background:var(--crema);color:var(--tinta);width:100%}
+form .btn{grid-column:1/-1}
+.ok{grid-column:1/-1;color:var(--oliva);font-weight:700;margin:0}
+@media(max-width:800px){form{grid-template-columns:1fr 1fr}}
+footer{border-top:1px solid var(--linea);padding:40px 16px;text-align:center;color:var(--suave);font-size:14px}
+</style></head><body>
+<div class="demo">Web de ejemplo para restaurantes · <a href="../../index.html">ver todas las propuestas</a></div>
+<header><a class="logo" href="#">La Marea</a><nav><a href="#carta">Carta</a><a href="#menu">Menú del día</a><a href="#reserva" class="btn">Reservar mesa</a></nav></header>
+<main>
+<div class="hero"><div><div class="k">Cocina mediterránea · Paseo marítimo</div><h1>Pescado del día y arroces <em>frente al mar</em></h1><p>Cocina de mercado desde 1998. Lo que trae la lonja por la mañana, a la mesa a mediodía.</p><a href="#reserva" class="btn">Reservar mesa</a></div><div class="plato" role="img" aria-label="Ilustración de un plato de arroz"></div></div>
+<div class="datos"><div class="in"><div><b>13:00 – 16:30</b><span>Comidas, todos los días</span></div><div><b>20:00 – 23:30</b><span>Cenas, de jueves a sábado</span></div><div><b>Terraza al mar</b><span>40 plazas, perros bienvenidos</span></div><div><b>952 000 000</b><span>Reservas y encargos</span></div></div></div>
+<section id="carta"><div class="k">Nuestra carta</div><h2>Para compartir o no</h2>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="c1">Entrantes</button><button role="tab" aria-selected="false" data-t="c2">Arroces</button><button role="tab" aria-selected="false" data-t="c3">Del mar</button><button role="tab" aria-selected="false" data-t="c4">Postres</button></div>
+<div class="carta" id="c1"><div class="item"><div><h3>Ensaladilla de la casa</h3><small>Con ventresca y picos</small></div><span class="p">8,50 €</span></div><div class="item"><div><h3>Boquerones al limón</h3><small>Fritos en aceite de oliva</small></div><span class="p">9,00 €</span></div><div class="item"><div><h3>Ajoblanco malagueño</h3><small>Con uvas y melón</small></div><span class="p">7,50 €</span></div><div class="item"><div><h3>Croquetas de puchero</h3><small>6 unidades</small></div><span class="p">8,00 €</span></div></div>
+<div class="carta" id="c2" hidden><div class="item"><div><h3>Arroz de marisco</h3><small>Mínimo 2 personas, por persona</small></div><span class="p">16,00 €</span></div><div class="item"><div><h3>Arroz negro</h3><small>Con alioli suave</small></div><span class="p">15,00 €</span></div><div class="item"><div><h3>Arroz de verduras</h3><small>De temporada</small></div><span class="p">13,00 €</span></div><div class="item"><div><h3>Fideuá</h3><small>Con gambas y sepia</small></div><span class="p">15,50 €</span></div></div>
+<div class="carta" id="c3" hidden><div class="item"><div><h3>Espeto de sardinas</h3><small>En la barca, a la leña</small></div><span class="p">7,00 €</span></div><div class="item"><div><h3>Pescado del día</h3><small>A la plancha o a la sal, según lonja</small></div><span class="p">S/M</span></div><div class="item"><div><h3>Calamar a la plancha</h3><small>Con ajo y perejil</small></div><span class="p">14,00 €</span></div><div class="item"><div><h3>Fritura malagueña</h3><small>Para dos</small></div><span class="p">22,00 €</span></div></div>
+<div class="carta" id="c4" hidden><div class="item"><div><h3>Tarta de queso</h3><small>Al horno, cremosa</small></div><span class="p">5,50 €</span></div><div class="item"><div><h3>Torrija de leche</h3><small>Con helado de canela</small></div><span class="p">5,50 €</span></div><div class="item"><div><h3>Fruta de temporada</h3><small>De la Axarquía</small></div><span class="p">4,00 €</span></div><div class="item"><div><h3>Café y dulce</h3><small>Del día</small></div><span class="p">3,50 €</span></div></div>
+</section>
+<section id="menu" style="padding-top:0"><div class="menu"><div><div class="k" style="color:#e6e9c8">De lunes a viernes, a mediodía</div><h2>Menú del día</h2><p>Primero, segundo, postre o café, pan y bebida. Cambia cada día según el mercado.</p></div><div class="pr">14,50 €</div></div></section>
+<section id="reserva" style="padding-top:0"><div class="k">Reservas</div><h2>Te guardamos mesa</h2>
+<form id="f"><label>Nombre<input required autocomplete="name"></label><label>Teléfono<input required type="tel" autocomplete="tel"></label><label>Día<input required type="date" id="dia"></label><label>Personas<select><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></label><button class="btn">Pedir reserva</button><p class="ok" id="ok" hidden>¡Hecho! Te llamamos para confirmar. (Ejemplo: aquí llegaría por WhatsApp o correo.)</p></form></section>
+</main>
+<footer>La Marea · Paseo Marítimo, Torre del Mar · Web de ejemplo: nombre, platos y precios inventados</footer>
+<script>
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));document.querySelectorAll('.carta').forEach(c=>c.hidden=c.id!==b.dataset.t)});
+document.getElementById('dia').min=new Date().toISOString().slice(0,10);
+document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('ok').hidden=false};
+</script>
+</body></html>

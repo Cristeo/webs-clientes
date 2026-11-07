@@ -1,0 +1,73 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Clínica Brisa · Fisioterapia y dental (web de ejemplo)</title>
+<meta name="description" content="Fisioterapia, odontología y podología en Torre del Mar. Pide cita online.">
+<style>
+@font-face{font-family:Inter;src:url(../../fonts/Inter-Regular.otf);font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(../../fonts/Inter-Bold.otf);font-weight:600 800;font-display:swap}
+:root{--fondo:#f5fafa;--tinta:#123236;--verde:#0f8b8d;--claro:#dff1ef;--suave:#577073;--linea:#d5e6e5;--coral:#f28b6c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{margin:0;line-height:1.12;font-weight:700;letter-spacing:-.015em}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.demo{background:var(--tinta);color:#fff;font-size:13px;text-align:center;padding:8px 12px}.demo a{color:#9fe2dc}
+header{max-width:1120px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 16px;gap:12px}
+.logo{font-weight:800;font-size:20px;text-decoration:none;display:flex;gap:10px;align-items:center}
+.logo i{width:34px;height:34px;border-radius:50%;background:var(--verde);position:relative}
+.logo i:before,.logo i:after{content:"";position:absolute;background:#fff;border-radius:2px;left:50%;top:50%;transform:translate(-50%,-50%)}
+.logo i:before{width:16px;height:5px}.logo i:after{width:5px;height:16px}
+nav{display:flex;gap:24px;align-items:center;font-size:15px}nav a{text-decoration:none}
+.btn{display:inline-block;background:var(--verde);color:#fff;text-decoration:none;font:700 15px Inter;padding:13px 24px;border-radius:40px;border:0;cursor:pointer}
+@media(max-width:740px){nav a:not(.btn){display:none}}
+.hero{max-width:1120px;margin:auto;padding:40px 16px 70px;display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(38px,5.8vw,64px)}.hero h1 em{font-style:normal;color:var(--verde)}
+.hero p{font-size:19px;color:var(--suave);margin:18px 0 28px;max-width:46ch}
+.urg{display:flex;gap:12px;align-items:center;margin-top:22px;font-size:15px;color:var(--suave)}
+.urg b{color:var(--tinta)}.urg i{width:10px;height:10px;border-radius:50%;background:#2bb673;box-shadow:0 0 0 5px #2bb67333}
+.circ{aspect-ratio:1;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;background:linear-gradient(150deg,var(--claro),#bfe5e1);position:relative;display:grid;place-items:center}
+.card{background:#fff;border-radius:18px;padding:20px 22px;box-shadow:0 20px 40px -20px #12323640;width:min(78%,300px)}
+.card small{color:var(--suave);font-size:13px}.card b{display:block;font-size:18px;margin:2px 0 12px}
+.slots{display:flex;gap:8px;flex-wrap:wrap}.slots span{border:1.5px solid var(--verde);color:var(--verde);border-radius:20px;padding:4px 12px;font-size:14px;font-weight:700}
+.slots span.on{background:var(--verde);color:#fff}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.circ{max-width:360px;width:100%;margin:auto}}
+section{max-width:1120px;margin:auto;padding:80px 16px}
+.k{color:var(--verde);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(30px,4.6vw,46px);margin-bottom:34px}
+.esp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.e{background:#fff;border:1px solid var(--linea);border-radius:22px;padding:30px;display:grid;gap:12px;align-content:start}
+.e .ic{width:52px;height:52px;border-radius:16px;background:var(--claro);display:grid;place-items:center}
+.e h3{font-size:22px}.e p{color:var(--suave);margin:0}
+.e ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.e li{background:var(--fondo);border-radius:20px;padding:4px 12px;font-size:13px;font-weight:600}
+@media(max-width:860px){.esp{grid-template-columns:1fr}}
+.equipo{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.p{text-align:center}.p .av{aspect-ratio:1;border-radius:50%;background:var(--claro);display:grid;place-items:center;font-size:34px;font-weight:800;color:var(--verde);margin-bottom:14px}
+.p b{display:block}.p span{color:var(--suave);font-size:14px}
+@media(max-width:760px){.equipo{grid-template-columns:1fr 1fr}}
+.seguros{background:#fff;border:1px solid var(--linea);border-radius:22px;padding:28px 32px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;justify-content:space-between}
+.seguros b{font-size:18px}.seguros span{color:var(--suave);font-weight:700;font-size:15px}
+.cita{background:var(--verde);color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
+.cita h2{margin-bottom:12px}.cita p{opacity:.85;margin:0}
+.cita form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cita label{display:grid;gap:6px;font-size:13px;font-weight:600;opacity:.95}
+.cita input,.cita select{font:16px Inter;padding:12px;border-radius:12px;border:0;color:var(--tinta);width:100%}
+.cita .btn{background:var(--tinta);grid-column:1/-1}
+.ok{grid-column:1/-1;font-weight:700;margin:0}
+@media(max-width:800px){.cita{grid-template-columns:1fr;padding:28px}.cita form{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--linea);padding:36px 16px;text-align:center;color:var(--suave);font-size:14px}
+</style></head><body>
+<div class="demo">Web de ejemplo para clínicas, fisios y dentistas · <a href="../../index.html">ver todas las propuestas</a></div>
+<header><a class="logo" href="#"><i></i>Clínica Brisa</a><nav><a href="#especialidades">Especialidades</a><a href="#equipo">Equipo</a><a href="#cita" class="btn">Pedir cita</a></nav></header>
+<main>
+<div class="hero"><div><div class="k">Fisioterapia · Odontología · Podología</div><h1>Cuidamos de ti <em>sin esperas</em></h1><p>Tres especialidades en un mismo centro, con cita en el día para urgencias y aparcamiento gratuito en la puerta.</p><a href="#cita" class="btn">Pedir cita online</a><div class="urg"><i></i><span><b>Hoy hay huecos</b> · Urgencias dentales hasta las 20:00</span></div></div>
+<div class="circ" aria-hidden="true"><div class="card"><small>Fisioterapia · Mañana</small><b>Elige tu hora</b><div class="slots"><span>9:00</span><span class="on">10:30</span><span>12:00</span><span>17:30</span><span>19:00</span></div></div></div></div>
+<section id="especialidades" style="padding-top:20px"><div class="k">Especialidades</div><h2>Todo lo que necesitas, en un sitio</h2>
+<div class="esp"><div class="e"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f8b8d" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v6l-4 6M12 14l4 6M7 11h10"/></svg></div><h3>Fisioterapia</h3><p>Dolor de espalda, lesiones deportivas y recuperación tras operación.</p><ul><li>Suelo pélvico</li><li>Deportiva</li><li>Punción seca</li></ul></div><div class="e"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f8b8d" stroke-width="2"><path d="M7 3c-3 0-4 3-3 6s1 12 3 12 2-6 5-6 3 6 5 6 2-9 3-12-0-6-3-6-3 2-5 2-2-2-5-2z"/></svg></div><h3>Odontología</h3><p>Revisiones, limpiezas, implantes y ortodoncia invisible.</p><ul><li>Implantes</li><li>Ortodoncia</li><li>Blanqueamiento</li></ul></div><div class="e"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f8b8d" stroke-width="2"><path d="M8 3v8c0 3-2 4-2 7a3 3 0 0 0 6 0c0-2 2-2 4-2s4-1 4-3-2-3-5-3h-3V3"/></svg></div><h3>Podología</h3><p>Estudio de la pisada, plantillas a medida y quiropodia.</p><ul><li>Pisada</li><li>Plantillas</li><li>Uñas</li></ul></div></div></section>
+<section id="equipo" style="padding-top:0"><div class="k">Equipo</div><h2>Profesionales colegiados</h2>
+<div class="equipo"><div class="p"><div class="av">LM</div><b>Laura M.</b><span>Fisioterapeuta</span></div><div class="p"><div class="av">JR</div><b>Javier R.</b><span>Odontólogo</span></div><div class="p"><div class="av">AS</div><b>Ana S.</b><span>Ortodoncista</span></div><div class="p"><div class="av">PG</div><b>Pablo G.</b><span>Podólogo</span></div></div></section>
+<section style="padding-top:0"><div class="seguros"><b>Trabajamos con tu seguro</b><span>Adeslas</span><span>Sanitas</span><span>DKV</span><span>Asisa</span><span>Mapfre</span></div></section>
+<section id="cita" style="padding-top:0"><div class="cita"><div><h2>Pide tu cita</h2><p>Te confirmamos por WhatsApp en menos de una hora en horario de clínica.</p><p style="margin-top:18px"><b>952 000 000</b><br>L–V 9:00–20:00 · S 10:00–14:00</p></div>
+<form id="f"><label>Nombre<input required autocomplete="name"></label><label>Teléfono<input required type="tel" autocomplete="tel"></label><label>Especialidad<select><option>Fisioterapia</option><option>Odontología</option><option>Podología</option></select></label><label>Día preferido<input type="date" id="dia"></label><button class="btn">Solicitar cita</button><p class="ok" id="ok" hidden>Cita solicitada. Te escribimos para confirmar la hora. (Ejemplo.)</p></form></div></section>
+</main>
+<footer>Clínica Brisa · Torre del Mar · Web de ejemplo: nombre, equipo y datos inventados</footer>
+<script>document.getElementById('dia').min=new Date().toISOString().slice(0,10);document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('ok').hidden=false};</script>
+</body></html>
